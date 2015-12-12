@@ -7,7 +7,7 @@ use std
 */
 
 const main = {
-	var sum
+	var sum = 0
 	for var i = 3; i < 1000; i++
 		match (i % 3, i % 5)
 		| (0, 0) : sum += i
