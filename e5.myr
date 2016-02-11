@@ -8,15 +8,12 @@ use std
 
 const main = {
 	var n : uint64 = 0
-	while true
-		:next
-		n += 1
-		for var i = 1 ; i <= 20; i++ 
-			if n % i != 0
-				goto next
-			;;
+	:next
+	n += 1
+	for var i = 1 ; i <= 20; i++ 
+		if n % i != 0
+			goto next
 		;;
-		break
 	;;
 	std.put("{}\n", n)
 }

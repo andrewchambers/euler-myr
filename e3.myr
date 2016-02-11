@@ -31,7 +31,7 @@ const main = {
 		;;
 		if 600851475143 % n == 0
 			std.put("{}\n", n)
-			->
+			-> void
 		;;
 	;;
 }

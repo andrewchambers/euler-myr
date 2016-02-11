@@ -1,0 +1,28 @@
+use std
+
+const ispalindrome = {n
+	var x = n;
+	var rev = 0;
+
+	while x != 0
+		rev *= 10
+		rev += x % 10;
+		x /= 10
+	;;
+	-> n == rev
+}
+
+const main = {
+	var product, largest	
+
+	largest = 0
+	for var i = 100; i < 1000; i++
+		for var j = 100; j < 1000; j++
+			product = i * j;
+			if ispalindrome(product)
+				largest = std.max(largest, product)				
+			;;
+		;;
+	;;
+	std.put("{}\n", largest)
+}
