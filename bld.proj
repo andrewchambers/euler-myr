@@ -25,3 +25,6 @@ bin e7 =
 	e7.myr
 	lib ./:prime
 ;;
+bin e8 =
+	e8.myr
+;;

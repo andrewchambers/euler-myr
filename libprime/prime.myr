@@ -1,0 +1,25 @@
+pkg prime =
+	const isprime : (n : uint64 -> bool)
+;;
+
+const isprime = {n
+	var end
+	
+	match n
+	| 1 : -> false
+	| 2 : -> true
+	| 3 : -> true
+	| _ :
+	;;
+	if n % 2 == 0
+		-> false
+	;;
+	end = n/2 + 1
+	for var i = 3; i < end ; i += 2
+		if n % i == 0
+			-> false
+		;;
+	;;
+	-> true
+}
+
