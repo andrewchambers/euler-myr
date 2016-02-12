@@ -1,5 +1,8 @@
+use std
+
 pkg prime =
 	const isprime : (n : uint64 -> bool)
+	const upto : (n : uint64 -> uint64[:])
 ;;
 
 const isprime = {n
@@ -23,3 +26,30 @@ const isprime = {n
 	-> true
 }
 
+const upto = {n
+	var nums, primes
+	var sum : uint64 = 2
+	var p = 2
+	
+	primes = std.slalloc(0)
+	nums = std.slalloc(n castto(std.size))
+	
+	for var i = 0; i < nums.len; i++
+		nums[i] = true 
+	;;
+	nums[0] = false
+	:again
+	for var i = p - 1; i < nums.len; i += p
+		nums[i] = false
+	;;
+	for var i = p; i < nums.len; i++
+		if nums[i]
+			std.slpush(&primes, p)
+			p = i + 1
+			goto again	
+		;;
+	;;
+	std.slpush(&primes, p)
+	std.slfree(nums)
+	-> primes
+}

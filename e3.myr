@@ -9,14 +9,19 @@ use prime
 
 const main = {
 	var n : uint64 = 775146
+	var primes
+	
+	primes = prime.upto(n)
 	while true
 		n -= 1
-		if !prime.isprime(n)
+		if 600851475143 % n != 0
 			continue
 		;;
-		if 600851475143 % n == 0
+		match std.bsearch(primes, n, std.numcmp)
+		| `std.Some _:
 			std.put("{}\n", n)
-			-> void
+			break
+		| _:
 		;;
 	;;
 }
