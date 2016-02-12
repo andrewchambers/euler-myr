@@ -7,21 +7,26 @@ use prime
 	What is the largest prime factor of the number 600851475143 ?
 */
 
-const main = {
-	var n : uint64 = 775146
-	var primes
-	
-	primes = prime.upto(n)
-	while true
-		n -= 1
-		if 600851475143 % n != 0
-			continue
-		;;
-		match std.bsearch(primes, n, std.numcmp)
-		| `std.Some _:
-			std.put("{}\n", n)
-			break
-		| _:
+const smallestfactor = {n
+	for var i = 2; i < n; i++
+		if n % i == 0
+			-> i
 		;;
 	;;
+	-> n
+}
+
+const main = {
+	var n : uint64
+	var f : uint64
+	
+	n = 600851475143
+	while true
+		f = smallestfactor(n)
+		if f == n
+			break
+		;;
+		n /= f
+	;;
+	std.put("{}\n", n)
 }
