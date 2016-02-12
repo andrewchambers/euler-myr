@@ -1,0 +1,12 @@
+use std
+use prime
+
+const main = {
+	var sum
+	
+	sum = 0
+	for p in prime.upto(2000000)
+		sum += p
+	;;
+	std.put("{}\n", sum)
+}

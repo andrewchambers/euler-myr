@@ -1,0 +1,21 @@
+use std
+
+const main = {
+	var i, a, b, c, c2	
+	
+	for a = 1; a < 1000; a++
+		for b = a + 1; b < 1000; b++
+			c2 = a*a + b*b
+			for i = 0; i < 1000; i++
+				if i * i == c2
+					c = i
+		                        if b < c && a+b+c == 1000
+                                		std.put("{}\n", a*b*c)
+                                		-> void
+                        		;;
+					break
+				;;
+			;;
+		;;
+	;;
+}
